@@ -1,6 +1,6 @@
 class MazeReaderTest extends org.scalatest.FunSpec {
-  describe("MazeReader") {
 
+  describe("MazeReader") {
 
   }
 

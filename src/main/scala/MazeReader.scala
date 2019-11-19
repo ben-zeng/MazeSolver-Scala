@@ -1,9 +1,17 @@
 import scala.io.Source
 
+
 object MazeReader extends App {
-  val mazeFile = Source.fromFile("test_mazes/medium_input.txt")
-  for (line <- mazeFile.getLines) {
-    println(line)
+  val mazeInputFilePath: String = "test_mazes/input.txt"
+
+  def mazeFileToString(filePath: String = mazeInputFilePath): Unit = {
+    val bufferedSource = Source.fromFile(filePath)
+    val maze = bufferedSource.getLines.mkString("\n")
+    println(maze)
+    bufferedSource.close
   }
-  mazeFile.close
+
+  mazeFileToString()
+
+
 }
