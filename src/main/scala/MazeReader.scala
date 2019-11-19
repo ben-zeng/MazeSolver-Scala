@@ -1,26 +1,21 @@
 import scala.io.Source
 
 
-class MazeReader extends App {
+object MazeReader extends App {
   lazy val mazeInputFilePath: String = "test_mazes/input.txt"
 
-  def mazeFileToString(filePath: String = mazeInputFilePath): Unit = {
+
+  def mazeFileToString(filePath: String = mazeInputFilePath): String = {
     val bufferedSource = Source.fromFile(filePath)
     val maze = bufferedSource.getLines.mkString("\n")
-    println(maze)
     bufferedSource.close
+    maze
   }
 
   def returnFilePath(): String = {
-    val filePath = mazeInputFilePath
-    println(filePath)
-    filePath
-//    "test_mazes/input.txt"
+    mazeInputFilePath
   }
 
-  def cube(x: Int) = {
-    x * x * x
-  }
 
   mazeFileToString()
   returnFilePath()
